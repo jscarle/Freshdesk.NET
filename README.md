@@ -1,6 +1,9 @@
 # Freshdesk.NET - A simple .NET Freshdesk REST Client
 The primary design goal of the Freshdesk.NET client is to abstract Freshdesk's JSON API and present the developer with a simplified and strongly typed implementation. Much of the underlying mechanics have therefore purposefully been abstracted behind private modifiers.
 
+## Release Notes
+The current release notes can be read in [CHANGELOG.md](https://github.com/jscarle/Freshdesk.NET/blob/master/CHANGELOG.md).
+
 ## Dependencies
 Both [RestSharp](https://github.com/restsharp/RestSharp) and [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) are required dependencies.
 
