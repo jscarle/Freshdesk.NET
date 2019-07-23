@@ -23,7 +23,7 @@ if (response.StatusCode == HttpStatusCode.OK)
 
 ### Retrieving a single contact
 ```csharp
-(Response response, Contact contact) = freshdesk.GetContact(28000000001);
+(Response response, Contact contact) = freshdesk.GetContact(28000000000);
 if (response.StatusCode == HttpStatusCode.OK)
     Console.WriteLine(contact.Name);
 ```
@@ -31,9 +31,27 @@ if (response.StatusCode == HttpStatusCode.OK)
 ### Creating a contact
 ```csharp
 NewContact newContact = new NewContact();
-newContact.Name = "John Doe";
-newContact.Email = "john.doe@unidentified.com";
+newContact.Name = "Iosef Tarasov";
+newContact.Email = "iosef tarasov@mafia.ru";
 (Response response, Contact contact) = freshdesk.CreateContact(newContact);
-if (response.StatusCode == HttpStatusCode.OK)
+if (response.StatusCode == HttpStatusCode.Created)
     Console.WriteLine(contact.ID);
+```
+
+### Updating a contact
+```csharp
+Contact contact = new Contact();
+contact.ID = 28000000002;
+contact.Name = "John Wick";
+contact.Email = "john.wick@hightable.org";
+(Response response, Contact contact) = freshdesk.UpdateContact(contact);
+if (response.StatusCode == HttpStatusCode.OK)
+    Console.WriteLine(contact.Name);
+```
+
+### Deleting a contact
+```csharp
+Response response = freshdesk.DeleteContact(28000000001);
+if (response.StatusCode == HttpStatusCode.OK)
+    Console.WriteLine("Iosef didn't make it.");
 ```
