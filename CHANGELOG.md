@@ -1,5 +1,10 @@
 # Release Notes
 
+## July 23rd, 2019 - 0.4 build 257 - The Matrix Reloaded
+*Agent Johnson said it best: "Then you are meant for one more thing: deletion."*
+- Deleted the VirtualDictionary class and instead merged the code into CustomFields directly.
+- Minor refactoring of ErrorField and ErrorFieldCode.
+
 ## July 22nd, 2019 - 0.4 build 251 - The Matrix
 *Sometimes things come to you in a moment of inspiration, and in that moment, you can see the Matrix.*
 - Refactored most of the core framework classes.
