@@ -7,6 +7,10 @@ namespace Freshdesk
     [JsonConverter(typeof(StringEnumConverter))]
     public enum ErrorFieldCode
     {
+        /// <summary></summary>
+        [EnumMember(Value = "Unknown")]
+        Unknown,
+
         /// <summary>A mandatory attribute is missing. For example, calling Create a Contact without the mandatory email field in the request will result in this error.</summary>
         [EnumMember(Value = "missing_field")]
         MissingField,

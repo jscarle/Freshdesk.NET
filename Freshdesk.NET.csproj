@@ -106,7 +106,6 @@
     <Compile Include="Tickets\TicketSource.cs" />
     <Compile Include="Tickets\TicketAssociationType.cs" />
     <Compile Include="Tickets\TicketStatus.cs" />
-    <Compile Include="Core\VirtualDictionary.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
