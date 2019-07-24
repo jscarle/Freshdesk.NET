@@ -54,6 +54,6 @@ if (response.StatusCode == HttpStatusCode.OK)
 ### Deleting a contact
 ```csharp
 Response response = freshdesk.DeleteContact(28000000001);
-if (response.StatusCode == HttpStatusCode.OK)
+if (response.StatusCode == HttpStatusCode.NoContent)
     Console.WriteLine("Iosef didn't make it.");
 ```
