@@ -11,7 +11,9 @@ Both [RestSharp](https://github.com/restsharp/RestSharp) and [Newtonsoft.Json](h
 
 ### Creating an instance of the client
 ```csharp
-FreshdeskClient freshdesk = new FreshdeskClient("yourcompany.freshdesk.com", "yourapikey", "X");
+string freshdeskDomain = "yourcompany.freshdesk.com";
+string apiKey = "yourapikey";
+FreshdeskClient freshdesk = new FreshdeskClient(freshdeskDomain, apiKey, "X");
 ```
 
 ### Retrieving all contacts
