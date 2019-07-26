@@ -44,7 +44,7 @@ namespace Freshdesk
 
             public new async Task<Response> ExecuteTaskAsync(IRestRequest request, CancellationToken cancellationToken = default)
             {
-                IRestResponse response = await base.ExecuteTaskAsync(request, cancellationToken);
+                IRestResponse response = await base.ExecuteTaskAsync(request, cancellationToken).ConfigureAwait(false);
                 if (!IsSuccessfulRequest(response.StatusCode))
                     return new Response(response, JsonConvert.DeserializeObject<Error>(response.Content, jsonSerializerSettings));
 
@@ -106,7 +106,7 @@ namespace Freshdesk
                     Type genericType = typeof(T).GetGenericTypeDefinition().MakeGenericType(typeof(T).GetGenericArguments().First());
                     IList pagedData = (IList)Activator.CreateInstance(genericType);
 
-                    IRestResponse response = await base.ExecuteTaskAsync(request, cancellationToken);
+                    IRestResponse response = await base.ExecuteTaskAsync(request, cancellationToken).ConfigureAwait(false);
                     if (!IsSuccessfulRequest(response.StatusCode))
                         return (new Response(response, JsonConvert.DeserializeObject<Error>(response.Content, jsonSerializerSettings)), null);
 
@@ -120,7 +120,7 @@ namespace Freshdesk
                     {
                         request.Resource = nextPageUri;
 
-                        response = await base.ExecuteTaskAsync(request, cancellationToken);
+                        response = await base.ExecuteTaskAsync(request, cancellationToken).ConfigureAwait(false);
                         if (!IsSuccessfulRequest(response.StatusCode))
                             return (new Response(response, JsonConvert.DeserializeObject<Error>(response.Content, jsonSerializerSettings)), null);
 
@@ -135,7 +135,7 @@ namespace Freshdesk
                 }
                 else
                 {
-                    IRestResponse response = await base.ExecuteTaskAsync(request, cancellationToken);
+                    IRestResponse response = await base.ExecuteTaskAsync(request, cancellationToken).ConfigureAwait(false);
                     if (!IsSuccessfulRequest(response.StatusCode))
                         return (new Response(response, JsonConvert.DeserializeObject<Error>(response.Content, jsonSerializerSettings)), null);
 
@@ -183,7 +183,7 @@ namespace Freshdesk
                 Type genericType = typeof(T).GetGenericTypeDefinition().MakeGenericType(typeof(T).GetGenericArguments().First());
                 IList pagedData = (IList)Activator.CreateInstance(genericType);
 
-                IRestResponse response = await base.ExecuteTaskAsync(request, cancellationToken);
+                IRestResponse response = await base.ExecuteTaskAsync(request, cancellationToken).ConfigureAwait(false);
                 if (!IsSuccessfulRequest(response.StatusCode))
                     return (new Response(response, JsonConvert.DeserializeObject<Error>(response.Content, jsonSerializerSettings)), null);
 
@@ -197,7 +197,7 @@ namespace Freshdesk
 
                 for (int page = 2; page <= pages; page++)
                 {
-                    response = await base.ExecuteTaskAsync(request);
+                    response = await base.ExecuteTaskAsync(request).ConfigureAwait(false);
                     if (!IsSuccessfulRequest(response.StatusCode))
                         return (new Response(response, JsonConvert.DeserializeObject<Error>(response.Content, jsonSerializerSettings)), null);
 
