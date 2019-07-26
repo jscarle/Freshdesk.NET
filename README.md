@@ -8,10 +8,13 @@ The current release notes can be read in [CHANGELOG.md](https://github.com/jscar
 Both [RestSharp](https://github.com/restsharp/RestSharp) and [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) are required dependencies.
 
 ## Quick Start
+Make sure to consult the [Wiki](https://github.com/jscarle/Freshdesk.NET/wiki) for the full documentation.
 
 ### Creating an instance of the client
 ```csharp
-FreshdeskClient freshdesk = new FreshdeskClient("yourcompany.freshdesk.com", "yourapikey", "X");
+string freshdeskDomain = "yourcompany.freshdesk.com";
+string apiKey = "yourapikey";
+FreshdeskClient freshdesk = new FreshdeskClient(freshdeskDomain, apiKey, "X");
 ```
 
 ### Retrieving all contacts
@@ -52,6 +55,6 @@ if (response.StatusCode == HttpStatusCode.OK)
 ### Deleting a contact
 ```csharp
 Response response = freshdesk.DeleteContact(28000000001);
-if (response.StatusCode == HttpStatusCode.OK)
+if (response.StatusCode == HttpStatusCode.NoContent)
     Console.WriteLine("Iosef didn't make it.");
 ```
