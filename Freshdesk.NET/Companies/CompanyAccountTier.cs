@@ -7,7 +7,7 @@ namespace Freshdesk
     [JsonConverter(typeof(StringEnumConverter))]
     public enum CompanyAccountTier
     {
-        [EnumMember(Value = "Unknown")]
+        [EnumMember(Value = "")]
         Unknown,
 
         [EnumMember(Value = "Basic")]

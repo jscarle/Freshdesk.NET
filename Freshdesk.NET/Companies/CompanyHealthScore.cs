@@ -7,7 +7,7 @@ namespace Freshdesk
     [JsonConverter(typeof(StringEnumConverter))]
     public enum CompanyHealthScore
     {
-        [EnumMember(Value = "Unknown")]
+        [EnumMember(Value = "")]
         Unknown,
 
         [EnumMember(Value = "At risk")]
