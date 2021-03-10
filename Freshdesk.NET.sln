@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freshdesk.NET", "Freshdesk.NET\Freshdesk.NET.csproj", "{6BAA2F35-9748-41A8-9E0E-211D152816D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freshdesk.NET", "Freshdesk.NET\Freshdesk.NET.csproj", "{D2ECA44D-6224-49A3-AD0C-7DD412547939}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6BAA2F35-9748-41A8-9E0E-211D152816D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6BAA2F35-9748-41A8-9E0E-211D152816D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6BAA2F35-9748-41A8-9E0E-211D152816D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6BAA2F35-9748-41A8-9E0E-211D152816D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2ECA44D-6224-49A3-AD0C-7DD412547939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2ECA44D-6224-49A3-AD0C-7DD412547939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2ECA44D-6224-49A3-AD0C-7DD412547939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2ECA44D-6224-49A3-AD0C-7DD412547939}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

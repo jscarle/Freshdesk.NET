@@ -1,121 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6BAA2F35-9748-41A8-9E0E-211D152816D1}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Freshdesk</RootNamespace>
-    <AssemblyName>Freshdesk.NET</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Simple .NET Freshdesk REST Client</Description>
+    <Copyright>Copyright © Jean-Sebastien Carle 2019</Copyright>
+    <Authors>Jean-Sebastien Carle</Authors>
+    <Version>0.4.263</Version>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+    <PackageReference Include="RestSharp" Version="106.9.0" />
+  </ItemGroup>
+
   <PropertyGroup>
-    <StartupObject />
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <None Include="..\LICENSE" Pack="true" PackagePath="" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Agents\FreshdeskClient.AgentUpdate.cs" />
-    <Compile Include="Agents\Agent.cs" />
-    <Compile Include="Agents\AgentContact.cs" />
-    <Compile Include="Core\Extensions.cs" />
-    <Compile Include="Core\FreshdeskClient.CustomSerializer.cs" />
-    <Compile Include="Core\FreshdeskClient.CustomContractResolver.cs" />
-    <Compile Include="Core\FreshdeskClient.DateOnlyConverter.cs" />
-    <Compile Include="Tickets\FreshdeskClient.Tickets.cs" />
-    <Compile Include="Contacts\FreshdeskClient.Contacts.cs" />
-    <Compile Include="Companies\FreshdeskClient.Companies.cs" />
-    <Compile Include="Agents\FreshdeskClient.Agents.cs" />
-    <Compile Include="Companies\FreshdeskClient.CompanyUpdate.cs" />
-    <Compile Include="Companies\NewCompany.cs" />
-    <Compile Include="Companies\Company.cs" />
-    <Compile Include="Companies\CompanyIndustry.cs" />
-    <Compile Include="Companies\CompanyHealthScore.cs" />
-    <Compile Include="Companies\CompanyAccountTier.cs" />
-    <Compile Include="Agents\AgentTicketScope.cs" />
-    <Compile Include="Contacts\FreshdeskClient.ContactUpdate.cs" />
-    <Compile Include="Contacts\NewContact.cs" />
-    <Compile Include="Contacts\Contact.cs" />
-    <Compile Include="Contacts\ContactTimeZone.cs" />
-    <Compile Include="Contacts\ContactLanguage.cs" />
-    <Compile Include="Core\CustomFields.cs" />
-    <Compile Include="Core\Error.cs" />
-    <Compile Include="Core\ErrorField.cs" />
-    <Compile Include="Core\ErrorFieldCode.cs" />
-    <Compile Include="Core\FreshdeskClient.Class.cs" />
-    <Compile Include="SlaPolicies\SlaApplicableTo.cs" />
-    <Compile Include="SlaPolicies\SlaEscalationLevels.cs" />
-    <Compile Include="SlaPolicies\SlaEscalationAgents.cs" />
-    <Compile Include="SlaPolicies\SlaEscalation.cs" />
-    <Compile Include="SlaPolicies\SlaTargetDetails.cs" />
-    <Compile Include="SlaPolicies\SlaTarget.cs" />
-    <Compile Include="SlaPolicies\SlaPolicy.cs" />
-    <Compile Include="Conversations\Conversation.cs" />
-    <Compile Include="Conversations\ConversationSource.cs" />
-    <Compile Include="Tickets\FreshdeskClient.TicketUpdate.cs" />
-    <Compile Include="Tickets\TicketCompany.cs" />
-    <Compile Include="Tickets\TicketRequester.cs" />
-    <Compile Include="Tickets\NewTicket.cs" />
-    <Compile Include="Tickets\TicketStats.cs" />
-    <Compile Include="Contacts\OtherCompany.cs" />
-    <Compile Include="Core\FreshdeskClient.CustomRestClient.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Core\Response.cs" />
-    <Compile Include="Tickets\Ticket.cs" />
-    <Compile Include="Tickets\TicketPriority.cs" />
-    <Compile Include="Tickets\TicketScope.cs" />
-    <Compile Include="Tickets\TicketSource.cs" />
-    <Compile Include="Tickets\TicketAssociationType.cs" />
-    <Compile Include="Tickets\TicketStatus.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>UpdateVersion.exe -v Assembly -b Increment -r Fixed -i "$(ProjectDir)Properties\AssemblyInfo.cs" -o AssemblyInfo$.cs
-move AssemblyInfo$.cs "$(ProjectDir)Properties\AssemblyInfo.cs"
-UpdateVersion.exe -v File -b Increment -r Fixed -i "$(ProjectDir)Properties\AssemblyInfo.cs" -o AssemblyInfo$.cs
-move AssemblyInfo$.cs "$(ProjectDir)Properties\AssemblyInfo.cs"</PreBuildEvent>
-  </PropertyGroup>
+  
 </Project>
