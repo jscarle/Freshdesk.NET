@@ -5,6 +5,8 @@
     <Description>Simple .NET Freshdesk REST Client</Description>
     <Copyright>Copyright © Jean-Sebastien Carle 2019</Copyright>
     <Authors>Jean-Sebastien Carle</Authors>
+    <AssemblyName>FreshdeskNET</AssemblyName>
+    <RootNamespace>Freshdesk</RootNamespace>
     <Version>0.4.263</Version>
   </PropertyGroup>
 
@@ -15,8 +17,6 @@
 
   <PropertyGroup>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <AssemblyName>FreshdeskNET</AssemblyName>
-    <RootNamespace>Freshdesk</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
