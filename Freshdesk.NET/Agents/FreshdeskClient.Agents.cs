@@ -10,13 +10,16 @@ namespace Freshdesk
     public partial class FreshdeskClient
     {
         public (Response, List<Agent>) GetAgents()
-            => GetAgentsAsync().WaitAndUnwrapException<(Response, List<Agent>)>();
+            => GetAgents(null);
+
+        public (Response, List<Agent>) GetAgents(NameValueCollection filter)
+        {
+            RestRequest request = new RestRequest($"api/v2/agents{filter?.ToQueryString()}", Method.GET);
+            return client.Execute<List<Agent>>(request);
+        }
 
         public async Task<(Response, List<Agent>)> GetAgentsAsync(CancellationToken cancellationToken = default)
             => await GetAgentsAsync(null, cancellationToken).ConfigureAwait(false);
-
-        public (Response, List<Agent>) GetAgents(NameValueCollection filter)
-            => GetAgentsAsync(filter).WaitAndUnwrapException<(Response, List<Agent>)>();
 
         public async Task<(Response, List<Agent>)> GetAgentsAsync(NameValueCollection filter, CancellationToken cancellationToken = default)
         {
@@ -25,7 +28,13 @@ namespace Freshdesk
         }
 
         public (Response, Agent) GetAgent(long agentID)
-            => GetAgentAsync(agentID).WaitAndUnwrapException<(Response, Agent)>();
+        {
+            if (agentID <= 0)
+                throw new ArgumentException($"{nameof(agentID)} must be a positive {agentID.GetType().Name}.");
+
+            RestRequest request = new RestRequest($"api/v2/agents/{agentID}", Method.GET);
+            return client.Execute<Agent>(request);
+        }
 
         public async Task<(Response, Agent)> GetAgentAsync(long agentID, CancellationToken cancellationToken = default)
         {
@@ -37,7 +46,14 @@ namespace Freshdesk
         }
 
         public (Response, Agent) UpdateAgent(Agent agent)
-            => UpdateAgentAsync(agent).WaitAndUnwrapException<(Response, Agent)>();
+        {
+            if (agent == null)
+                throw new ArgumentNullException($"{nameof(agent)} cannot be null.");
+
+            RestRequest request = new RestRequest($"api/v2/agents/{agent.ID}", Method.PUT);
+            request.AddJsonBody(new AgentUpdate(agent));
+            return client.Execute<Agent>(request);
+        }
 
         public async Task<(Response, Agent)> UpdateAgentAsync(Agent agent, CancellationToken cancellationToken = default)
         {
@@ -50,7 +66,13 @@ namespace Freshdesk
         }
 
         public Response DeleteAgent(long agentID)
-            => DeleteAgentAsync(agentID).WaitAndUnwrapException<Response>();
+        {
+            if (agentID <= 0)
+                throw new ArgumentException($"{nameof(agentID)} must be a positive {agentID.GetType().Name}.");
+
+            RestRequest request = new RestRequest($"api/v2/agents/{agentID}", Method.DELETE);
+            return client.Execute(request);
+        }
 
         public async Task<Response> DeleteAgentAsync(long agentID, CancellationToken cancellationToken = default)
         {
