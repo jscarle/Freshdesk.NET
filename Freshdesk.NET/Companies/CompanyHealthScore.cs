@@ -2,21 +2,20 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace Freshdesk
+namespace Freshdesk.Companies;
+
+[JsonConverter(typeof(StringEnumConverter))]
+public enum CompanyHealthScore
 {
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum CompanyHealthScore
-    {
-        [EnumMember(Value = "")]
-        Unknown,
+    [EnumMember(Value = "")]
+    Unknown,
 
-        [EnumMember(Value = "At risk")]
-        AtRisk,
+    [EnumMember(Value = "At risk")]
+    AtRisk,
 
-        [EnumMember(Value = "Doing okay")]
-        DoingOkay,
+    [EnumMember(Value = "Doing okay")]
+    DoingOkay,
 
-        [EnumMember(Value = "Happy")]
-        Happy
-    }
+    [EnumMember(Value = "Happy")]
+    Happy
 }

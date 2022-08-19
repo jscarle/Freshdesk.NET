@@ -2,443 +2,442 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace Freshdesk
+namespace Freshdesk.Contacts;
+
+[JsonConverter(typeof(StringEnumConverter))]
+public enum ContactTimeZone
 {
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum ContactTimeZone
-    {
-        Unknown,
+    Unknown,
 
-        [EnumMember(Value = "American Samoa")]
-        GMTm1100_AmericanSamoa,
+    [EnumMember(Value = "American Samoa")]
+    GmTm1100AmericanSamoa,
 
-        [EnumMember(Value = "International Date Line West")]
-        GMTm1100_InternationalDateLineWest,
+    [EnumMember(Value = "International Date Line West")]
+    GmTm1100InternationalDateLineWest,
 
-        [EnumMember(Value = "Midway Island")]
-        GMTm1100_MidwayIsland,
+    [EnumMember(Value = "Midway Island")]
+    GmTm1100MidwayIsland,
 
-        [EnumMember(Value = "Hawaii")]
-        GMTm1000_Hawaii,
+    [EnumMember(Value = "Hawaii")]
+    GmTm1000Hawaii,
 
-        [EnumMember(Value = "Alaska")]
-        GMTm0900_Alaska,
+    [EnumMember(Value = "Alaska")]
+    GmTm0900Alaska,
 
-        [EnumMember(Value = "Pacific Time (US & Canada)")]
-        GMTm0800_PacificTimeUSCanada,
+    [EnumMember(Value = "Pacific Time (US & Canada)")]
+    GmTm0800PacificTimeUsCanada,
 
-        [EnumMember(Value = "Tijuana")]
-        GMTm0800_Tijuana,
+    [EnumMember(Value = "Tijuana")]
+    GmTm0800Tijuana,
 
-        [EnumMember(Value = "Arizona")]
-        GMTm0700_Arizona,
+    [EnumMember(Value = "Arizona")]
+    GmTm0700Arizona,
 
-        [EnumMember(Value = "Chihuahua")]
-        GMTm0700_Chihuahua,
+    [EnumMember(Value = "Chihuahua")]
+    GmTm0700Chihuahua,
 
-        [EnumMember(Value = "Mazatlan")]
-        GMTm0700_Mazatlan,
+    [EnumMember(Value = "Mazatlan")]
+    GmTm0700Mazatlan,
 
-        [EnumMember(Value = "Mountain Time (US & Canada)")]
-        GMTm0700_MountainTimeUSCanada,
+    [EnumMember(Value = "Mountain Time (US & Canada)")]
+    GmTm0700MountainTimeUsCanada,
 
-        [EnumMember(Value = "Central America")]
-        GMTm0600_CentralAmerica,
+    [EnumMember(Value = "Central America")]
+    GmTm0600CentralAmerica,
 
-        [EnumMember(Value = "Central Time (US & Canada)")]
-        GMTm0600_CentralTimeUSCanada,
+    [EnumMember(Value = "Central Time (US & Canada)")]
+    GmTm0600CentralTimeUsCanada,
 
-        [EnumMember(Value = "Guadalajara")]
-        GMTm0600_Guadalajara,
+    [EnumMember(Value = "Guadalajara")]
+    GmTm0600Guadalajara,
 
-        [EnumMember(Value = "Mexico City")]
-        GMTm0600_MexicoCity,
+    [EnumMember(Value = "Mexico City")]
+    GmTm0600MexicoCity,
 
-        [EnumMember(Value = "Monterrey")]
-        GMTm0600_Monterrey,
+    [EnumMember(Value = "Monterrey")]
+    GmTm0600Monterrey,
 
-        [EnumMember(Value = "Saskatchewan")]
-        GMTm0600_Saskatchewan,
+    [EnumMember(Value = "Saskatchewan")]
+    GmTm0600Saskatchewan,
 
-        [EnumMember(Value = "Bogota")]
-        GMTm0500_Bogota,
+    [EnumMember(Value = "Bogota")]
+    GmTm0500Bogota,
 
-        [EnumMember(Value = "Eastern Time (US & Canada)")]
-        GMTm0500_EasternTimeUSCanada,
+    [EnumMember(Value = "Eastern Time (US & Canada)")]
+    GmTm0500EasternTimeUsCanada,
 
-        [EnumMember(Value = "Indiana (East)")]
-        GMTm0500_IndianaEast,
+    [EnumMember(Value = "Indiana (East)")]
+    GmTm0500IndianaEast,
 
-        [EnumMember(Value = "Lima")]
-        GMTm0500_Lima,
+    [EnumMember(Value = "Lima")]
+    GmTm0500Lima,
 
-        [EnumMember(Value = "Quito")]
-        GMTm0500_Quito,
+    [EnumMember(Value = "Quito")]
+    GmTm0500Quito,
 
-        [EnumMember(Value = "Atlantic Time (Canada)")]
-        GMTm0400_AtlanticTimeCanada,
+    [EnumMember(Value = "Atlantic Time (Canada)")]
+    GmTm0400AtlanticTimeCanada,
 
-        [EnumMember(Value = "Caracas")]
-        GMTm0400_Caracas,
+    [EnumMember(Value = "Caracas")]
+    GmTm0400Caracas,
 
-        [EnumMember(Value = "Georgetown")]
-        GMTm0400_Georgetown,
+    [EnumMember(Value = "Georgetown")]
+    GmTm0400Georgetown,
 
-        [EnumMember(Value = "La Paz")]
-        GMTm0400_LaPaz,
+    [EnumMember(Value = "La Paz")]
+    GmTm0400LaPaz,
 
-        [EnumMember(Value = "Santiago")]
-        GMTm0400_Santiago,
+    [EnumMember(Value = "Santiago")]
+    GmTm0400Santiago,
 
-        [EnumMember(Value = "Newfoundland")]
-        GMTm0330_Newfoundland,
+    [EnumMember(Value = "Newfoundland")]
+    GmTm0330Newfoundland,
 
-        [EnumMember(Value = "Brasilia")]
-        GMTm0300_Brasilia,
+    [EnumMember(Value = "Brasilia")]
+    GmTm0300Brasilia,
 
-        [EnumMember(Value = "Buenos Aires")]
-        GMTm0300_BuenosAires,
+    [EnumMember(Value = "Buenos Aires")]
+    GmTm0300BuenosAires,
 
-        [EnumMember(Value = "Greenland")]
-        GMTm0300_Greenland,
+    [EnumMember(Value = "Greenland")]
+    GmTm0300Greenland,
 
-        [EnumMember(Value = "Mid-Atlantic")]
-        GMTm0200_MidAtlantic,
+    [EnumMember(Value = "Mid-Atlantic")]
+    GmTm0200MidAtlantic,
 
-        [EnumMember(Value = "Azores")]
-        GMTm0100_Azores,
+    [EnumMember(Value = "Azores")]
+    GmTm0100Azores,
 
-        [EnumMember(Value = "Cape Verde Is.")]
-        GMTm0100_CapeVerdeIs,
+    [EnumMember(Value = "Cape Verde Is.")]
+    GmTm0100CapeVerdeIs,
 
-        [EnumMember(Value = "Casablanca")]
-        GMTp0000_Casablanca,
+    [EnumMember(Value = "Casablanca")]
+    GmTp0000Casablanca,
 
-        [EnumMember(Value = "Dublin")]
-        GMTp0000_Dublin,
+    [EnumMember(Value = "Dublin")]
+    GmTp0000Dublin,
 
-        [EnumMember(Value = "Edinburgh")]
-        GMTp0000_Edinburgh,
+    [EnumMember(Value = "Edinburgh")]
+    GmTp0000Edinburgh,
 
-        [EnumMember(Value = "Lisbon")]
-        GMTp0000_Lisbon,
+    [EnumMember(Value = "Lisbon")]
+    GmTp0000Lisbon,
 
-        [EnumMember(Value = "London")]
-        GMTp0000_London,
+    [EnumMember(Value = "London")]
+    GmTp0000London,
 
-        [EnumMember(Value = "Monrovia")]
-        GMTp0000_Monrovia,
+    [EnumMember(Value = "Monrovia")]
+    GmTp0000Monrovia,
 
-        [EnumMember(Value = "UTC")]
-        GMTp0000_UTC,
+    [EnumMember(Value = "UTC")]
+    GmTp0000Utc,
 
-        [EnumMember(Value = "Amsterdam")]
-        GMTp0100_Amsterdam,
+    [EnumMember(Value = "Amsterdam")]
+    GmTp0100Amsterdam,
 
-        [EnumMember(Value = "Belgrade")]
-        GMTp0100_Belgrade,
+    [EnumMember(Value = "Belgrade")]
+    GmTp0100Belgrade,
 
-        [EnumMember(Value = "Berlin")]
-        GMTp0100_Berlin,
+    [EnumMember(Value = "Berlin")]
+    GmTp0100Berlin,
 
-        [EnumMember(Value = "Bern")]
-        GMTp0100_Bern,
+    [EnumMember(Value = "Bern")]
+    GmTp0100Bern,
 
-        [EnumMember(Value = "Bratislava")]
-        GMTp0100_Bratislava,
+    [EnumMember(Value = "Bratislava")]
+    GmTp0100Bratislava,
 
-        [EnumMember(Value = "Brussels")]
-        GMTp0100_Brussels,
+    [EnumMember(Value = "Brussels")]
+    GmTp0100Brussels,
 
-        [EnumMember(Value = "Budapest")]
-        GMTp0100_Budapest,
+    [EnumMember(Value = "Budapest")]
+    GmTp0100Budapest,
 
-        [EnumMember(Value = "Copenhagen")]
-        GMTp0100_Copenhagen,
+    [EnumMember(Value = "Copenhagen")]
+    GmTp0100Copenhagen,
 
-        [EnumMember(Value = "Ljubljana")]
-        GMTp0100_Ljubljana,
+    [EnumMember(Value = "Ljubljana")]
+    GmTp0100Ljubljana,
 
-        [EnumMember(Value = "Madrid")]
-        GMTp0100_Madrid,
+    [EnumMember(Value = "Madrid")]
+    GmTp0100Madrid,
 
-        [EnumMember(Value = "Paris")]
-        GMTp0100_Paris,
+    [EnumMember(Value = "Paris")]
+    GmTp0100Paris,
 
-        [EnumMember(Value = "Prague")]
-        GMTp0100_Prague,
+    [EnumMember(Value = "Prague")]
+    GmTp0100Prague,
 
-        [EnumMember(Value = "Rome")]
-        GMTp0100_Rome,
+    [EnumMember(Value = "Rome")]
+    GmTp0100Rome,
 
-        [EnumMember(Value = "Sarajevo")]
-        GMTp0100_Sarajevo,
+    [EnumMember(Value = "Sarajevo")]
+    GmTp0100Sarajevo,
 
-        [EnumMember(Value = "Skopje")]
-        GMTp0100_Skopje,
+    [EnumMember(Value = "Skopje")]
+    GmTp0100Skopje,
 
-        [EnumMember(Value = "Stockholm")]
-        GMTp0100_Stockholm,
+    [EnumMember(Value = "Stockholm")]
+    GmTp0100Stockholm,
 
-        [EnumMember(Value = "Vienna")]
-        GMTp0100_Vienna,
+    [EnumMember(Value = "Vienna")]
+    GmTp0100Vienna,
 
-        [EnumMember(Value = "Warsaw")]
-        GMTp0100_Warsaw,
+    [EnumMember(Value = "Warsaw")]
+    GmTp0100Warsaw,
 
-        [EnumMember(Value = "West Central Africa")]
-        GMTp0100_WestCentralAfrica,
+    [EnumMember(Value = "West Central Africa")]
+    GmTp0100WestCentralAfrica,
 
-        [EnumMember(Value = "Zagreb")]
-        GMTp0100_Zagreb,
+    [EnumMember(Value = "Zagreb")]
+    GmTp0100Zagreb,
 
-        [EnumMember(Value = "Athens")]
-        GMTp0200_Athens,
+    [EnumMember(Value = "Athens")]
+    GmTp0200Athens,
 
-        [EnumMember(Value = "Bucharest")]
-        GMTp0200_Bucharest,
+    [EnumMember(Value = "Bucharest")]
+    GmTp0200Bucharest,
 
-        [EnumMember(Value = "Cairo")]
-        GMTp0200_Cairo,
+    [EnumMember(Value = "Cairo")]
+    GmTp0200Cairo,
 
-        [EnumMember(Value = "Harare")]
-        GMTp0200_Harare,
+    [EnumMember(Value = "Harare")]
+    GmTp0200Harare,
 
-        [EnumMember(Value = "Helsinki")]
-        GMTp0200_Helsinki,
+    [EnumMember(Value = "Helsinki")]
+    GmTp0200Helsinki,
 
-        [EnumMember(Value = "Istanbul")]
-        GMTp0200_Istanbul,
+    [EnumMember(Value = "Istanbul")]
+    GmTp0200Istanbul,
 
-        [EnumMember(Value = "Jerusalem")]
-        GMTp0200_Jerusalem,
+    [EnumMember(Value = "Jerusalem")]
+    GmTp0200Jerusalem,
 
-        [EnumMember(Value = "Kyiv")]
-        GMTp0200_Kyiv,
+    [EnumMember(Value = "Kyiv")]
+    GmTp0200Kyiv,
 
-        [EnumMember(Value = "Pretoria")]
-        GMTp0200_Pretoria,
+    [EnumMember(Value = "Pretoria")]
+    GmTp0200Pretoria,
 
-        [EnumMember(Value = "Riga")]
-        GMTp0200_Riga,
+    [EnumMember(Value = "Riga")]
+    GmTp0200Riga,
 
-        [EnumMember(Value = "Sofia")]
-        GMTp0200_Sofia,
+    [EnumMember(Value = "Sofia")]
+    GmTp0200Sofia,
 
-        [EnumMember(Value = "Tallinn")]
-        GMTp0200_Tallinn,
+    [EnumMember(Value = "Tallinn")]
+    GmTp0200Tallinn,
 
-        [EnumMember(Value = "Vilnius")]
-        GMTp0200_Vilnius,
+    [EnumMember(Value = "Vilnius")]
+    GmTp0200Vilnius,
 
-        [EnumMember(Value = "Baghdad")]
-        GMTp0300_Baghdad,
+    [EnumMember(Value = "Baghdad")]
+    GmTp0300Baghdad,
 
-        [EnumMember(Value = "Kuwait")]
-        GMTp0300_Kuwait,
+    [EnumMember(Value = "Kuwait")]
+    GmTp0300Kuwait,
 
-        [EnumMember(Value = "Minsk")]
-        GMTp0300_Minsk,
+    [EnumMember(Value = "Minsk")]
+    GmTp0300Minsk,
 
-        [EnumMember(Value = "Moscow")]
-        GMTp0300_Moscow,
+    [EnumMember(Value = "Moscow")]
+    GmTp0300Moscow,
 
-        [EnumMember(Value = "Nairobi")]
-        GMTp0300_Nairobi,
+    [EnumMember(Value = "Nairobi")]
+    GmTp0300Nairobi,
 
-        [EnumMember(Value = "Riyadh")]
-        GMTp0300_Riyadh,
+    [EnumMember(Value = "Riyadh")]
+    GmTp0300Riyadh,
 
-        [EnumMember(Value = "St. Petersburg")]
-        GMTp0300_StPetersburg,
+    [EnumMember(Value = "St. Petersburg")]
+    GmTp0300StPetersburg,
 
-        [EnumMember(Value = "Volgograd")]
-        GMTp0300_Volgograd,
+    [EnumMember(Value = "Volgograd")]
+    GmTp0300Volgograd,
 
-        [EnumMember(Value = "Tehran")]
-        GMTp0330_Tehran,
+    [EnumMember(Value = "Tehran")]
+    GmTp0330Tehran,
 
-        [EnumMember(Value = "Abu Dhabi")]
-        GMTp0400_AbuDhabi,
+    [EnumMember(Value = "Abu Dhabi")]
+    GmTp0400AbuDhabi,
 
-        [EnumMember(Value = "Baku")]
-        GMTp0400_Baku,
+    [EnumMember(Value = "Baku")]
+    GmTp0400Baku,
 
-        [EnumMember(Value = "Muscat")]
-        GMTp0400_Muscat,
+    [EnumMember(Value = "Muscat")]
+    GmTp0400Muscat,
 
-        [EnumMember(Value = "Tbilisi")]
-        GMTp0400_Tbilisi,
+    [EnumMember(Value = "Tbilisi")]
+    GmTp0400Tbilisi,
 
-        [EnumMember(Value = "Yerevan")]
-        GMTp0400_Yerevan,
+    [EnumMember(Value = "Yerevan")]
+    GmTp0400Yerevan,
 
-        [EnumMember(Value = "Kabul")]
-        GMTp0430_Kabul,
+    [EnumMember(Value = "Kabul")]
+    GmTp0430Kabul,
 
-        [EnumMember(Value = "Ekaterinburg")]
-        GMTp0500_Ekaterinburg,
+    [EnumMember(Value = "Ekaterinburg")]
+    GmTp0500Ekaterinburg,
 
-        [EnumMember(Value = "Islamabad")]
-        GMTp0500_Islamabad,
+    [EnumMember(Value = "Islamabad")]
+    GmTp0500Islamabad,
 
-        [EnumMember(Value = "Karachi")]
-        GMTp0500_Karachi,
+    [EnumMember(Value = "Karachi")]
+    GmTp0500Karachi,
 
-        [EnumMember(Value = "Tashkent")]
-        GMTp0500_Tashkent,
+    [EnumMember(Value = "Tashkent")]
+    GmTp0500Tashkent,
 
-        [EnumMember(Value = "Chennai")]
-        GMTp0530_Chennai,
+    [EnumMember(Value = "Chennai")]
+    GmTp0530Chennai,
 
-        [EnumMember(Value = "Kolkata")]
-        GMTp0530_Kolkata,
+    [EnumMember(Value = "Kolkata")]
+    GmTp0530Kolkata,
 
-        [EnumMember(Value = "Mumbai")]
-        GMTp0530_Mumbai,
+    [EnumMember(Value = "Mumbai")]
+    GmTp0530Mumbai,
 
-        [EnumMember(Value = "New Delhi")]
-        GMTp0530_NewDelhi,
+    [EnumMember(Value = "New Delhi")]
+    GmTp0530NewDelhi,
 
-        [EnumMember(Value = "Sri Jayawardenepura")]
-        GMTp0530_SriJayawardenepura,
+    [EnumMember(Value = "Sri Jayawardenepura")]
+    GmTp0530SriJayawardenepura,
 
-        [EnumMember(Value = "Kathmandu")]
-        GMTp0545_Kathmandu,
+    [EnumMember(Value = "Kathmandu")]
+    GmTp0545Kathmandu,
 
-        [EnumMember(Value = "Almaty")]
-        GMTp0600_Almaty,
+    [EnumMember(Value = "Almaty")]
+    GmTp0600Almaty,
 
-        [EnumMember(Value = "Astana")]
-        GMTp0600_Astana,
+    [EnumMember(Value = "Astana")]
+    GmTp0600Astana,
 
-        [EnumMember(Value = "Dhaka")]
-        GMTp0600_Dhaka,
+    [EnumMember(Value = "Dhaka")]
+    GmTp0600Dhaka,
 
-        [EnumMember(Value = "Urumqi")]
-        GMTp0600_Urumqi,
+    [EnumMember(Value = "Urumqi")]
+    GmTp0600Urumqi,
 
-        [EnumMember(Value = "Rangoon")]
-        GMTp0630_Rangoon,
+    [EnumMember(Value = "Rangoon")]
+    GmTp0630Rangoon,
 
-        [EnumMember(Value = "Bangkok")]
-        GMTp0700_Bangkok,
+    [EnumMember(Value = "Bangkok")]
+    GmTp0700Bangkok,
 
-        [EnumMember(Value = "Hanoi")]
-        GMTp0700_Hanoi,
+    [EnumMember(Value = "Hanoi")]
+    GmTp0700Hanoi,
 
-        [EnumMember(Value = "Jakarta")]
-        GMTp0700_Jakarta,
+    [EnumMember(Value = "Jakarta")]
+    GmTp0700Jakarta,
 
-        [EnumMember(Value = "Krasnoyarsk")]
-        GMTp0700_Krasnoyarsk,
+    [EnumMember(Value = "Krasnoyarsk")]
+    GmTp0700Krasnoyarsk,
 
-        [EnumMember(Value = "Novosibirsk")]
-        GMTp0700_Novosibirsk,
+    [EnumMember(Value = "Novosibirsk")]
+    GmTp0700Novosibirsk,
 
-        [EnumMember(Value = "Beijing")]
-        GMTp0800_Beijing,
+    [EnumMember(Value = "Beijing")]
+    GmTp0800Beijing,
 
-        [EnumMember(Value = "Chongqing")]
-        GMTp0800_Chongqing,
+    [EnumMember(Value = "Chongqing")]
+    GmTp0800Chongqing,
 
-        [EnumMember(Value = "Hong Kong")]
-        GMTp0800_HongKong,
+    [EnumMember(Value = "Hong Kong")]
+    GmTp0800HongKong,
 
-        [EnumMember(Value = "Irkutsk")]
-        GMTp0800_Irkutsk,
+    [EnumMember(Value = "Irkutsk")]
+    GmTp0800Irkutsk,
 
-        [EnumMember(Value = "Kuala Lumpur")]
-        GMTp0800_KualaLumpur,
+    [EnumMember(Value = "Kuala Lumpur")]
+    GmTp0800KualaLumpur,
 
-        [EnumMember(Value = "Perth")]
-        GMTp0800_Perth,
+    [EnumMember(Value = "Perth")]
+    GmTp0800Perth,
 
-        [EnumMember(Value = "Singapore")]
-        GMTp0800_Singapore,
+    [EnumMember(Value = "Singapore")]
+    GmTp0800Singapore,
 
-        [EnumMember(Value = "Taipei")]
-        GMTp0800_Taipei,
+    [EnumMember(Value = "Taipei")]
+    GmTp0800Taipei,
 
-        [EnumMember(Value = "Ulaan Bataar")]
-        GMTp0800_UlaanBataar,
+    [EnumMember(Value = "Ulaan Bataar")]
+    GmTp0800UlaanBataar,
 
-        [EnumMember(Value = "Osaka")]
-        GMTp0900_Osaka,
+    [EnumMember(Value = "Osaka")]
+    GmTp0900Osaka,
 
-        [EnumMember(Value = "Sapporo")]
-        GMTp0900_Sapporo,
+    [EnumMember(Value = "Sapporo")]
+    GmTp0900Sapporo,
 
-        [EnumMember(Value = "Seoul")]
-        GMTp0900_Seoul,
+    [EnumMember(Value = "Seoul")]
+    GmTp0900Seoul,
 
-        [EnumMember(Value = "Tokyo")]
-        GMTp0900_Tokyo,
+    [EnumMember(Value = "Tokyo")]
+    GmTp0900Tokyo,
 
-        [EnumMember(Value = "Yakutsk")]
-        GMTp0900_Yakutsk,
+    [EnumMember(Value = "Yakutsk")]
+    GmTp0900Yakutsk,
 
-        [EnumMember(Value = "Adelaide")]
-        GMTp0930_Adelaide,
+    [EnumMember(Value = "Adelaide")]
+    GmTp0930Adelaide,
 
-        [EnumMember(Value = "Darwin")]
-        GMTp0930_Darwin,
+    [EnumMember(Value = "Darwin")]
+    GmTp0930Darwin,
 
-        [EnumMember(Value = "Brisbane")]
-        GMTp1000_Brisbane,
+    [EnumMember(Value = "Brisbane")]
+    GmTp1000Brisbane,
 
-        [EnumMember(Value = "Canberra")]
-        GMTp1000_Canberra,
+    [EnumMember(Value = "Canberra")]
+    GmTp1000Canberra,
 
-        [EnumMember(Value = "Guam")]
-        GMTp1000_Guam,
+    [EnumMember(Value = "Guam")]
+    GmTp1000Guam,
 
-        [EnumMember(Value = "Hobart")]
-        GMTp1000_Hobart,
+    [EnumMember(Value = "Hobart")]
+    GmTp1000Hobart,
 
-        [EnumMember(Value = "Melbourne")]
-        GMTp1000_Melbourne,
+    [EnumMember(Value = "Melbourne")]
+    GmTp1000Melbourne,
 
-        [EnumMember(Value = "Port Moresby")]
-        GMTp1000_PortMoresby,
+    [EnumMember(Value = "Port Moresby")]
+    GmTp1000PortMoresby,
 
-        [EnumMember(Value = "Sydney")]
-        GMTp1000_Sydney,
+    [EnumMember(Value = "Sydney")]
+    GmTp1000Sydney,
 
-        [EnumMember(Value = "Vladivostok")]
-        GMTp1000_Vladivostok,
+    [EnumMember(Value = "Vladivostok")]
+    GmTp1000Vladivostok,
 
-        [EnumMember(Value = "Magadan")]
-        GMTp1100_Magadan,
+    [EnumMember(Value = "Magadan")]
+    GmTp1100Magadan,
 
-        [EnumMember(Value = "New Caledonia")]
-        GMTp1100_NewCaledonia,
+    [EnumMember(Value = "New Caledonia")]
+    GmTp1100NewCaledonia,
 
-        [EnumMember(Value = "Solomon Is.")]
-        GMTp1100_SolomonIs,
+    [EnumMember(Value = "Solomon Is.")]
+    GmTp1100SolomonIs,
 
-        [EnumMember(Value = "Auckland")]
-        GMTp1200_Auckland,
+    [EnumMember(Value = "Auckland")]
+    GmTp1200Auckland,
 
-        [EnumMember(Value = "Fiji")]
-        GMTp1200_Fiji,
+    [EnumMember(Value = "Fiji")]
+    GmTp1200Fiji,
 
-        [EnumMember(Value = "Kamchatka")]
-        GMTp1200_Kamchatka,
+    [EnumMember(Value = "Kamchatka")]
+    GmTp1200Kamchatka,
 
-        [EnumMember(Value = "Marshall Is.")]
-        GMTp1200_MarshallIs,
+    [EnumMember(Value = "Marshall Is.")]
+    GmTp1200MarshallIs,
 
-        [EnumMember(Value = "Wellington")]
-        GMTp1200_Wellington,
+    [EnumMember(Value = "Wellington")]
+    GmTp1200Wellington,
 
-        [EnumMember(Value = "Nuku'alofa")]
-        GMTp1300_Nukualofa,
+    [EnumMember(Value = "Nuku'alofa")]
+    GmTp1300Nukualofa,
 
-        [EnumMember(Value = "Samoa")]
-        GMTp1300_Samoa,
+    [EnumMember(Value = "Samoa")]
+    GmTp1300Samoa,
 
-        [EnumMember(Value = "Tokelau Is.")]
-        GMTp1300_TokelauIs
-    }
+    [EnumMember(Value = "Tokelau Is.")]
+    GmTp1300TokelauIs
 }

@@ -1,10 +1,9 @@
-﻿namespace Freshdesk
+﻿namespace Freshdesk.Agents;
+
+public enum AgentTicketScope
 {
-    public enum AgentTicketScope
-    {
-        Unknown = -1,
-        GlobalAccess = 1,
-        GroupAccess = 2,
-        RestrictedAccess = 3
-    }
+    Unknown = -1,
+    GlobalAccess = 1,
+    GroupAccess = 2,
+    RestrictedAccess = 3
 }

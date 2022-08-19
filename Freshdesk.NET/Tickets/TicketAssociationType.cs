@@ -1,11 +1,10 @@
-﻿namespace Freshdesk
+﻿namespace Freshdesk.Tickets;
+
+public enum TicketAssociationType
 {
-    public enum TicketAssociationType
-    {
-        Unknown = -1,
-        Parent = 1,
-        Child = 2,
-        Tracker = 3,
-        Related = 4
-    }
+    Unknown = -1,
+    Parent = 1,
+    Child = 2,
+    Tracker = 3,
+    Related = 4
 }

@@ -2,56 +2,69 @@
 using System.Net;
 using RestSharp;
 
-namespace Freshdesk
+namespace Freshdesk.Core;
+
+public readonly struct Response
 {
-    public struct Response
+    public HttpStatusCode StatusCode { get; }
+
+    public Error Error { get; }
+
+    public RateLimit Queries { get; }
+
+    public Response(IRestResponse response, Error error = null)
     {
-        public HttpStatusCode StatusCode { get; }
+        StatusCode = response.StatusCode;
 
-        public Error Error { get; }
+        Error = error;
 
-        private readonly RateLimit _queries;
-        public RateLimit Queries { get { return _queries; } }
-
-        public Response(IRestResponse response)
-            : this(response, null) { }
-
-        public Response(IRestResponse response, Error error)
+        var total = 0;
+        var remaining = 0;
+        var used = 0;
+        var retryAfter = 0;
+        foreach (var header in response.Headers)
         {
-            StatusCode = response.StatusCode;
+            if (header.Name == null)
+                continue;
 
-            Error = error;
-
-            _queries = new RateLimit();
-            foreach (Parameter header in response.Headers)
+            switch (header.Name.ToLower())
             {
-                switch (header.Name.ToLower())
-                {
-                    case "x-ratelimit-total":
-                        _queries.Total = Convert.ToInt32(header.Value);
-                        break;
+                case "x-ratelimit-total":
+                    total = Convert.ToInt32(header.Value);
+                    break;
 
-                    case "x-ratelimit-remaining":
-                        _queries.Remaining = Convert.ToInt32(header.Value);
-                        break;
+                case "x-ratelimit-remaining":
+                    remaining = Convert.ToInt32(header.Value);
+                    break;
 
-                    case "x-ratelimit-used-currentrequest":
-                        _queries.Used = Convert.ToInt32(header.Value);
-                        break;
+                case "x-ratelimit-used-currentrequest":
+                    used = Convert.ToInt32(header.Value);
+                    break;
 
-                    case "retry-after":
-                        _queries.RetryAfter = Convert.ToInt32(header.Value);
-                        break;
-                }
+                case "retry-after":
+                    retryAfter = Convert.ToInt32(header.Value);
+                    break;
             }
         }
+        Queries = new RateLimit(total, remaining, used, retryAfter);
+    }
 
-        public struct RateLimit
+    public struct RateLimit
+    {
+        public int Total { get; }
+            
+        public int Remaining { get; }
+            
+        public int Used { get; }
+            
+        public int RetryAfter { get; }
+
+        public RateLimit(int total, int remaining, int used, int retryAfter)
         {
-            public int Total;
-            public int Remaining;
-            public int Used;
-            public int RetryAfter;
+            Total = total;
+            Remaining = remaining;
+            Used = used;
+            RetryAfter = retryAfter;
         }
     }
 }

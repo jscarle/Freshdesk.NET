@@ -2,134 +2,133 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace Freshdesk
+namespace Freshdesk.Contacts;
+
+[JsonConverter(typeof(StringEnumConverter))]
+public enum ContactLanguage
 {
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum ContactLanguage
-    {
-        Unknown,
+    Unknown,
 
-        [EnumMember(Value = "ar")]
-        Arabic,
+    [EnumMember(Value = "ar")]
+    Arabic,
 
-        [EnumMember(Value = "bs")]
-        Bosnian,
+    [EnumMember(Value = "bs")]
+    Bosnian,
 
-        [EnumMember(Value = "bg")]
-        Bulgarian,
+    [EnumMember(Value = "bg")]
+    Bulgarian,
 
-        [EnumMember(Value = "ca")]
-        Catalan,
+    [EnumMember(Value = "ca")]
+    Catalan,
 
-        [EnumMember(Value = "zh-CN")]
-        Chinese,
+    [EnumMember(Value = "zh-CN")]
+    Chinese,
 
-        [EnumMember(Value = "zh-TW")]
-        ChineseTraditional,
+    [EnumMember(Value = "zh-TW")]
+    ChineseTraditional,
 
-        [EnumMember(Value = "hr")]
-        Croatian,
+    [EnumMember(Value = "hr")]
+    Croatian,
 
-        [EnumMember(Value = "cs")]
-        Czech,
+    [EnumMember(Value = "cs")]
+    Czech,
 
-        [EnumMember(Value = "da")]
-        Danish,
+    [EnumMember(Value = "da")]
+    Danish,
 
-        [EnumMember(Value = "nl")]
-        Dutch,
+    [EnumMember(Value = "nl")]
+    Dutch,
 
-        [EnumMember(Value = "en")]
-        English,
+    [EnumMember(Value = "en")]
+    English,
 
-        [EnumMember(Value = "et")]
-        Estonian,
+    [EnumMember(Value = "et")]
+    Estonian,
 
-        [EnumMember(Value = "fi")]
-        Finnish,
+    [EnumMember(Value = "fi")]
+    Finnish,
 
-        [EnumMember(Value = "fr")]
-        French,
+    [EnumMember(Value = "fr")]
+    French,
 
-        [EnumMember(Value = "de")]
-        German,
+    [EnumMember(Value = "de")]
+    German,
 
-        [EnumMember(Value = "el")]
-        Greek,
+    [EnumMember(Value = "el")]
+    Greek,
 
-        [EnumMember(Value = "he")]
-        Hebrew,
+    [EnumMember(Value = "he")]
+    Hebrew,
 
-        [EnumMember(Value = "hu")]
-        Hungarian,
+    [EnumMember(Value = "hu")]
+    Hungarian,
 
-        [EnumMember(Value = "id")]
-        Indonesian,
+    [EnumMember(Value = "id")]
+    Indonesian,
 
-        [EnumMember(Value = "it")]
-        Italian,
+    [EnumMember(Value = "it")]
+    Italian,
 
-        [EnumMember(Value = "ja")]
-        Japanese,
+    [EnumMember(Value = "ja")]
+    Japanese,
 
-        [EnumMember(Value = "ko")]
-        Korean,
+    [EnumMember(Value = "ko")]
+    Korean,
 
-        [EnumMember(Value = "lv-LV")]
-        Latvian,
+    [EnumMember(Value = "lv-LV")]
+    Latvian,
 
-        [EnumMember(Value = "lt")]
-        Lithuanian,
+    [EnumMember(Value = "lt")]
+    Lithuanian,
 
-        [EnumMember(Value = "ms")]
-        Malay,
+    [EnumMember(Value = "ms")]
+    Malay,
 
-        [EnumMember(Value = "nb-NO")]
-        Norwegian,
+    [EnumMember(Value = "nb-NO")]
+    Norwegian,
 
-        [EnumMember(Value = "pl")]
-        Polish,
+    [EnumMember(Value = "pl")]
+    Polish,
 
-        [EnumMember(Value = "pt-BR")]
-        PortugueseBrazil,
+    [EnumMember(Value = "pt-BR")]
+    PortugueseBrazil,
 
-        [EnumMember(Value = "pt-PT")]
-        PortuguesePortugal,
+    [EnumMember(Value = "pt-PT")]
+    PortuguesePortugal,
 
-        [EnumMember(Value = "ro")]
-        Romanian,
+    [EnumMember(Value = "ro")]
+    Romanian,
 
-        [EnumMember(Value = "ru-RU")]
-        Russian,
+    [EnumMember(Value = "ru-RU")]
+    Russian,
 
-        [EnumMember(Value = "sr")]
-        Serbian,
+    [EnumMember(Value = "sr")]
+    Serbian,
 
-        [EnumMember(Value = "sk")]
-        Slovak,
+    [EnumMember(Value = "sk")]
+    Slovak,
 
-        [EnumMember(Value = "sl")]
-        Slovenian,
+    [EnumMember(Value = "sl")]
+    Slovenian,
 
-        [EnumMember(Value = "es")]
-        Spanish,
+    [EnumMember(Value = "es")]
+    Spanish,
 
-        [EnumMember(Value = "es-LA")]
-        SpanishLatinAmerica,
+    [EnumMember(Value = "es-LA")]
+    SpanishLatinAmerica,
 
-        [EnumMember(Value = "sv-SE")]
-        Swedish,
+    [EnumMember(Value = "sv-SE")]
+    Swedish,
 
-        [EnumMember(Value = "th")]
-        Thai,
+    [EnumMember(Value = "th")]
+    Thai,
 
-        [EnumMember(Value = "tr")]
-        Turkish,
+    [EnumMember(Value = "tr")]
+    Turkish,
 
-        [EnumMember(Value = "uk")]
-        Ukrainian,
+    [EnumMember(Value = "uk")]
+    Ukrainian,
 
-        [EnumMember(Value = "vi")]
-        Vietnamese
-    }
+    [EnumMember(Value = "vi")]
+    Vietnamese
 }
