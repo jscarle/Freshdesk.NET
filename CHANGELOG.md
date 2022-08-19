@@ -1,5 +1,12 @@
 # Release Notes
 
+## August 18th, 2022 - 0.4 build 265 - The Matrix Revolutions
+*And now the end is near, and so I face the final curtain.*
+- Updated dependencies due to security advisories.
+- Rearranged the code into namespaces.
+- Adjusted the casing of properties and method names.
+- Final release.
+
 ## July 26th, 2019 - 0.4 build 260 - The Matrix Revolutions
 *Just like Neo, you can now control the world Asynchronously.*
 - Propagated asynchronous Task-based Asynchronous Pattern (TAP) methods with CancellationToken support.
